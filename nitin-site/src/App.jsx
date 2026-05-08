@@ -159,7 +159,7 @@ export default function App() {
           </h1>
         </div>
 
-        <div className="hidden gap-8 text-sm text-zinc-600 md:flex">
+        <div className="hidden gap-8 text-md text-zinc-400 md:flex">
           <a href="#about" className="hover:text-white transition">
             About
           </a>
