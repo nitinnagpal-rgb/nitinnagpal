@@ -1,3 +1,8 @@
+"dependencies": {
+  "next": "latest",
+  "react": "latest",
+  "react-dom": "latest"
+}
 {
   "name": "nitin-site",
   "private": true,
