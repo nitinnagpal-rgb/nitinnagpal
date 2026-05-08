@@ -132,6 +132,8 @@ export default function App() {
   const [showAllExperience, setShowAllExperience] = useState(false);
   const [showAllThoughts, setShowAllThoughts] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
   const displayedExperience = showAllExperience ? experience : experience.slice(0, 4);
   const displayedThoughtLeadership = showAllThoughts ? thoughtLeadership : thoughtLeadership.slice(0, 4);
 
@@ -140,8 +142,41 @@ export default function App() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setSubmitStatus(null);
+
+    if (contactEndpoint) {
+      try {
+        const response = await fetch(contactEndpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+
+        setSubmitStatus({ type: "success", message: "Message sent successfully." });
+        setFormData({ name: "", email: "", message: "" });
+      } catch (error) {
+        setSubmitStatus({
+          type: "error",
+          message:
+            "Unable to send message right now. Please email nitin.nagpal@gmail.com directly.",
+        });
+      }
+
+      return;
+    }
+
     const mailtoLink = `mailto:nitin.nagpal@gmail.com?subject=Message from ${formData.name}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     )}`;
@@ -672,6 +707,22 @@ export default function App() {
                 Send Message
               </button>
             </form>
+            {submitStatus && (
+              <p
+                className={`mt-4 text-sm ${
+                  submitStatus.type === "success"
+                    ? "text-emerald-300"
+                    : "text-rose-300"
+                }`}
+              >
+                {submitStatus.message}
+              </p>
+            )}
+            {!contactEndpoint && (
+              <p className="mt-4 text-sm text-zinc-500">
+                No backend endpoint configured yet. The form will fall back to opening your email client.
+              </p>
+            )}
           </div>
 
           {/* CONTACT INFORMATION */}
