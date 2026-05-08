@@ -59,6 +59,27 @@ const experience = [
   }
 ];
 
+const advisoryRoles = [
+  {
+    company: "Vector Capital",
+    summary: "Product and commercial due diligence, pricing transformation, and growth strategy for enterprise SaaS businesses.",
+    period: "Advisory",
+    tags: ["Due diligence", "Pricing", "SaaS growth"],
+  },
+  {
+    company: "Box",
+    summary: "Strategic advisor on enterprise platform strategy, partnerships, and go-to-market initiatives.",
+    period: "Advisory",
+    tags: ["Platform strategy", "Partnerships", "GTM"],
+  },
+  {
+    company: "Safe Security",
+    summary: "Advisor on product positioning, enterprise security strategy, and market expansion initiatives.",
+    period: "Advisory",
+    tags: ["Product positioning", "Security strategy", "Market expansion"],
+  },
+];
+
 const focusAreas = [
   "AI Security & Governance",
   "Data Security Platforms",
@@ -138,6 +159,9 @@ export default function App() {
           </a>
           <a href="#experience" className="hover:text-white transition">
             Experience
+          </a>
+          <a href="#advisory" className="hover:text-white transition">
+            Advisory
           </a>
           <a href="#thoughts" className="hover:text-white transition">
             Thoughts
@@ -372,10 +396,53 @@ export default function App() {
             )}
             {!showAllExperience && (
               <p className="text-sm text-zinc-500">
-                Showing recent 3 roles. Expand to reveal the full timeline.
+                Showing recent 4 roles. Expand to reveal the full timeline.
               </p>
             )}
           </div>
+
+        </div>
+      </section>
+
+      {/* ADVISORY */}
+      <section
+        id="advisory"
+        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
+      >
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="mt-6 text-2xl md:text-4xl font-semibold tracking-tight text-white">
+            Advisory & Consulting 
+          </h2>
+          <p className="mt-4 text-base md:text-lg leading-8 text-zinc-400">
+            Selected advisory engagements where I provide product, GTM, pricing, and platform strategy counsel.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {advisoryRoles.map((item) => (
+            <div key={item.company} className="group rounded-3xl border border-zinc-800 bg-zinc-900/95 p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-zinc-900">
+              <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-cyan-200">
+                    Advisory
+                  </span>
+                  <h4 className="mt-4 text-lg font-semibold text-white">{item.company}</h4>
+                </div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">{item.period}</p>
+              </div>
+              <p className="text-sm leading-6 text-zinc-300">{item.summary}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-zinc-800 bg-zinc-950/50 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-zinc-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
