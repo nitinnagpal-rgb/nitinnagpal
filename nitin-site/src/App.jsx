@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import Blogs from "./Blogs";
 
 const experience = [
   {
@@ -184,7 +187,7 @@ export default function App() {
     setFormData({ name: "", email: "", message: "" });
   };
 
-  return (
+  const homeContent = (
     <main className="min-h-screen bg-zinc-900 text-white">
       {/* NAV */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-8">
@@ -204,9 +207,10 @@ export default function App() {
           <a href="#advisory" className="hover:text-white transition">
             Advisory
           </a>
-          <a href="#thoughts" className="hover:text-white transition">
+          {/* <a href="#thoughts" className="hover:text-white transition">*/}
+          <Link to="/blogs" className="hover:text-white transition">
             Blogs and Thoughts
-          </a>
+          </Link>
           <a href="#travels" className="hover:text-white transition">
             Travels
           </a>
@@ -484,7 +488,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* THOUGHT LEADERSHIP */}
+      {/* THOUGHT LEADERSHIP 
       <section
         id="thoughts"
         className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
@@ -542,7 +546,7 @@ export default function App() {
           )}
         </div>
 
-        {/* SPEAKING & MEDIA */}
+        {/* SPEAKING & MEDIA 
         <div className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-950/60 p-8 md:p-10">
           <h3 className="text-xl font-semibold text-cyan-300 mb-6">
             Speaking & Media
@@ -571,7 +575,7 @@ export default function App() {
             </li>
           </ul>
         </div>
-      </section>
+      </section>*/}
 
 (      {/* FOCUS 
       <section
@@ -790,5 +794,15 @@ export default function App() {
         </div>
       </section>
     </main>
+  );
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={homeContent} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/Blogs" element={<Blogs />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
