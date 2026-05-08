@@ -69,13 +69,19 @@ const advisoryRoles = [
   {
     company: "Box",
     summary: "Strategic advisor on enterprise platform strategy, partnerships, and go-to-market initiatives.",
-    period: "Advisory",
+    period: "Consulting",
     tags: ["Platform strategy", "Partnerships", "GTM"],
   },
   {
     company: "Safe Security",
     summary: "Advisor on product positioning, enterprise security strategy, and market expansion initiatives.",
     period: "Advisory",
+    tags: ["Product positioning", "Security strategy", "Market expansion"],
+  },
+  {
+    company: "Hytrust",
+    summary: "Consultant advising on cloud security business strategy, market analysis, channel partnerships, customer engagement, and pricing models for securing virtualized workloads and cloud applications..",
+    period: "Consulting",
     tags: ["Product positioning", "Security strategy", "Market expansion"],
   },
 ];
@@ -165,9 +171,6 @@ export default function App() {
           </a>
           <a href="#thoughts" className="hover:text-white transition">
             Thoughts
-          </a>
-          <a href="#focus" className="hover:text-white transition">
-            Focus
           </a>
           <a href="#travels" className="hover:text-white transition">
             Travels
@@ -418,17 +421,17 @@ export default function App() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {advisoryRoles.map((item) => (
-            <div key={item.company} className="group rounded-3xl border border-zinc-800 bg-zinc-900/95 p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-zinc-900">
+            <div key={item.company} className="group rounded-3xl border border-zinc-800 bg-zinc-950/95 p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-zinc-900">
               <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-cyan-200">
-                    Advisory
+                    {item.period}
                   </span>
-                  <h4 className="mt-4 text-lg font-semibold text-white">{item.company}</h4>
+                  <h4 className="mt-4 text-lg font-semibold text-cyan-900">{item.company}</h4>
                 </div>
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">{item.period}</p>
+                
               </div>
               <p className="text-sm leading-6 text-zinc-300">{item.summary}</p>
               <div className="mt-6 flex flex-wrap gap-2">
@@ -535,7 +538,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOCUS */}
+(      {/* FOCUS 
       <section
         id="focus"
         className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
@@ -556,7 +559,7 @@ export default function App() {
             </div>
           ))}
         </div>
-      </section>
+      </section>)*/}
 
 
       {/* TRAVELS */}
