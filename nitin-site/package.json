@@ -3,6 +3,11 @@
   "react": "latest",
   "react-dom": "latest"
 }
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
+}
 {
   "name": "nitin-site",
   "private": true,
