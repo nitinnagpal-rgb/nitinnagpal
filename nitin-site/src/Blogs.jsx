@@ -1,8 +1,13 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const thoughtLeadership = [
-  {
+    {
+    title: "A Continuous Strategy Calibration Framework for GMs and Product Leaders (CPO)",
+    description: "The hardest leadership decision is often not what to build, but where to aggressively invest, where to experiment, and where to optimize for efficiency : A framework for continuous strategy calibration.",
+    source: "Nitin Nagpal",
+    url: "/GBES_blog",
+  },{
     title: "Operationalizing AI Governance in the agentic era",
     description: "A practical view on building AI governance frameworks for autonomous agents and enterprise resilience.",
     source: "Relyance AI",
@@ -28,13 +33,13 @@ const thoughtLeadership = [
   },
   {
     title: "Next-Generation Data Center with Pure Storage and Rubrik",
-    description: "Technoly integration between primary storage and progressive data protection solutions.",
+    description: "Technology integration between primary storage and progressive data protection solutions.",
     source: "Rubrik, Inc",
     url: "https://www.rubrik.com/blog/company/17/6/next-generation-data-center-pure-storage-rubrik",
   },
 ];
 
-export default function Blogs() {
+export default function Blogs({ theme, toggleTheme, navSolid }) {
   const [showAllThoughts, setShowAllThoughts] = useState(false);
   const displayedThoughtLeadership = showAllThoughts
     ? thoughtLeadership
@@ -43,17 +48,38 @@ export default function Blogs() {
   return (
     <main className="min-h-screen bg-zinc-900 text-white">
     {/* NAV */}
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-8">
+          <nav className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"}`}>
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-8">
             <div className="text-lg font-medium tracking-tight">
               <h1 className="max-w-2xl text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-zinc-100">
               <span className="text-cyan-400" style={{ color: '#22d3ee', textShadow: "0 0 8px rgba(34,211,238,0.5), 0 0 24px rgba(34,211,238,0.25)" }}>Nitin Nagpal</span>
               </h1>
             </div>
             <div className="hidden gap-8 text-md text-zinc-400 md:flex">
-              <Link to="https://www.nitinnagpal.com" className="hover:text-white transition">
+              <Link to="/" className="hover:text-white transition">
                 Home
               </Link>
+              <Link to="/blogs" className="hover:text-white transition">
+                Blogs
+              </Link>
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400 bg-cyan-500/10 text-cyan-200 transition hover:bg-cyan-500/20"
+              >
+                {theme === "dark" ? (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 7a5 5 0 100 10 5 5 0 000-10z" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12.79A9 9 0 1111.21 3c.05 0 .1 0 .15 0a7 7 0 109.64 9.79z" />
+                  </svg>
+                )}
+              </button>
             </div>
+          </div>
           </nav>
      
       <section
@@ -70,30 +96,47 @@ export default function Blogs() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {displayedThoughtLeadership.map((item) => (
-            <a
-              key={item.url}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-3xl border border-zinc-800 bg-zinc-950/90 p-6 transition hover:border-cyan-400 hover:bg-zinc-900"
-            >
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">
-                    {item.source}
-                  </p>
-                  <h3 className="mt-3 text-xl font-semibold text-white">
-                    {item.title}
-                  </h3>
+          {displayedThoughtLeadership.map((item) => {
+            const isInternal = item.url.startsWith("/");
+            const CardContent = (
+              <>
+                <div className="mb-4 flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">
+                      {item.source}
+                    </p>
+                    <h3 className="mt-3 text-xl font-semibold text-white">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-300 transition group-hover:bg-cyan-500 group-hover:text-white">
+                    ↗
+                  </span>
                 </div>
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-300 transition group-hover:bg-cyan-500 group-hover:text-white">
-                  ↗
-                </span>
-              </div>
-              <p className="text-sm leading-6 text-zinc-400">{item.description}</p>
-            </a>
-          ))}
+                <p className="text-sm leading-6 text-zinc-400">{item.description}</p>
+              </>
+            );
+
+            return isInternal ? (
+              <Link
+                key={item.url}
+                to={item.url}
+                className="group rounded-3xl border border-zinc-800 bg-zinc-950/90 p-6 transition hover:border-cyan-400 hover:bg-zinc-900"
+              >
+                {CardContent}
+              </Link>
+            ) : (
+              <a
+                key={item.url}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-3xl border border-zinc-800 bg-zinc-950/90 p-6 transition hover:border-cyan-400 hover:bg-zinc-900"
+              >
+                {CardContent}
+              </a>
+            );
+          })}
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-4 text-center">
