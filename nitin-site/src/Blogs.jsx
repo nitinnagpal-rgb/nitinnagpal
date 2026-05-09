@@ -66,7 +66,7 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
             type="button"
             onClick={toggleTheme}
             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-            className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-zinc-400 bg-zinc-500/10 text-zinc-200 transition hover:bg-cyan-500/20"
+            className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-zinc-400 bg-zinc-500/10 text-zinc-200 transition hover:bg-zinc-500/20"
           >
             {theme === "dark" ? (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5" aria-hidden="true">
