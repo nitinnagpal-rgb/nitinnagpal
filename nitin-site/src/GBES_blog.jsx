@@ -67,7 +67,7 @@ export default function GBES_blog({ theme, toggleTheme, navSolid }) {
 {
    <div className="my-5 overflow-hidden rounded-2xl border border-zinc-800">
   <img
-    src="/public/assets/GBES_blog_2.png"
+    src="/public/assets/GBES_Blog_2.png"
     alt="GBES strategic operating framework"
     className="w-full object-cover"
   />
