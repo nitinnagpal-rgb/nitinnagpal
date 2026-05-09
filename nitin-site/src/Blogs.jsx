@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 const thoughtLeadership = [
   {
@@ -41,6 +42,20 @@ export default function Blogs() {
 
   return (
     <main className="min-h-screen bg-zinc-900 text-white">
+    {/* NAV */}
+          <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-8">
+            <div className="text-lg font-medium tracking-tight">
+              <h1 className="max-w-2xl text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-zinc-100">
+              <span className="text-cyan-400" style={{ color: '#22d3ee', textShadow: "0 0 8px rgba(34,211,238,0.5), 0 0 24px rgba(34,211,238,0.25)" }}>Nitin Nagpal</span>
+              </h1>
+            </div>
+            <div className="hidden gap-8 text-md text-zinc-400 md:flex">
+              <Link to="https://www.nitinnagpal.com" className="hover:text-white transition">
+                Home
+              </Link>
+            </div>
+          </nav>
+     
       <section
         id="thoughts"
         className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
