@@ -298,11 +298,11 @@ export default function GBES_blog({ theme, toggleTheme, navSolid }) {
   </p>
 
   <p>
-    That’s why GMs need a continuous strategy calibration model — not just static roadmaps and annual planning exercises.
+    That’s why GMs and CPOsneed a continuous strategy calibration model — not just static roadmaps and annual planning exercises.
   </p>
 
   <p className="text-white font-medium">
-    Great GMs are strategic allocators.
+    Great GMs and CPOs are strategic allocators.
     The hardest leadership decision is often not what to build, but deciding what deserves aggressive investment, what requires incubation, what should remain exploratory, and what should simply be optimized efficiently.
   </p>
 </div>
