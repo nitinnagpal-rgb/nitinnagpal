@@ -222,7 +222,7 @@ export default function App() {
   };
 
   const homeContent = (
-    <main className="min-h-screen bg-zinc-900 text-white pt-28">
+    <main className="min-h-screen bg-zinc-900 text-white">
 
       {/* NAV */}
       
@@ -301,7 +301,7 @@ export default function App() {
 </nav> */}
 
       {/* HERO */}
-      <section className="mx-auto max-w-7xl px-8 pt-28 pb-24 md:pt-32 grid md:grid-cols-2 gap-4 items-center">
+      <section className="mx-auto max-w-7xl px-8 pt-20 pb-24 md:pt-32 grid md:grid-cols-2 gap-4 items-center">
         <div className="flex justify-center md:justify-start">
           <img
             src="/assets/nitin.jpg"
@@ -356,7 +356,7 @@ export default function App() {
       {/* ABOUT */}
       <section
         id="about"
-        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
+        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10 pt-20"
       >
        <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="mt-6 text-2xl md:text-4xl font-semibold tracking-tight text-white">
@@ -452,7 +452,7 @@ export default function App() {
       {/* EXPERIENCE */}
      <section
         id="experience"
-        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
+        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10 pt-20"
       >
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="mt-6 text-2xl md:text-4xl font-semibold tracking-tight text-white">
@@ -529,7 +529,7 @@ export default function App() {
       {/* ADVISORY */}
       <section
         id="advisory"
-        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
+        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10 pt-20"
       >
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="mt-6 text-2xl md:text-4xl font-semibold tracking-tight text-white">
@@ -684,7 +684,7 @@ export default function App() {
       {/* TRAVELS */}
       <section
         id="travels"
-        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
+        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10 pt-20"
       >
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="mt-6 text-2xl md:text-4xl font-semibold tracking-tight text-white">
@@ -726,7 +726,7 @@ export default function App() {
       {/* CONTACT */}
      <section
         id="contact"
-        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10"
+        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10 pt-20"
       >
         <div className="mb-16 text-center">
           <h2 className="text-2xl md:text-4xl font-semibold tracking-tight text-white">
