@@ -41,6 +41,7 @@ const thoughtLeadership = [
 
 export default function Blogs({ theme, toggleTheme, navSolid }) {
   const [showAllThoughts, setShowAllThoughts] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const displayedThoughtLeadership = showAllThoughts
     ? thoughtLeadership
     : thoughtLeadership.slice(0, 4);
@@ -49,13 +50,32 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
     <main className="min-h-screen bg-zinc-900 text-white">
     {/* NAV */}
           <nav className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"}`}>
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-8">
-            <div className="text-lg font-medium tracking-tight">
-              <h1 className="max-w-2xl text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-zinc-100">
-              <span className="text-cyan-400" style={{ color: '#22d3ee', textShadow: "0 0 8px rgba(34,211,238,0.5), 0 0 24px rgba(34,211,238,0.25)" }}>Nitin Nagpal</span>
-              </h1>
-            </div>
-            <div className="hidden gap-8 text-md text-zinc-400 md:flex">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 md:px-8">
+              <div className="flex items-center gap-4">
+                <div className="text-lg font-medium tracking-tight">
+                  <h1 className="text-lg md:text-2xl font-semibold text-zinc-100">
+                    <span className="text-cyan-400">Nitin Nagpal</span>
+                  </h1>
+                </div>
+                <button
+                  type="button"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 bg-zinc-950/70 text-zinc-200 transition hover:bg-zinc-900 md:hidden"
+                  onClick={() => setMobileNavOpen((prev) => !prev)}
+                  aria-expanded={mobileNavOpen}
+                  aria-label="Toggle navigation menu"
+                >
+                  {mobileNavOpen ? (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-5 w-5" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+              <div className="hidden gap-8 text-md text-zinc-400 md:flex">
               <Link to="/" className="hover:text-white transition">
                 Home
               </Link>
@@ -78,6 +98,12 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
               </svg>
             )}
           </button>
+            </div>
+          </div>
+          <div className={`${mobileNavOpen ? "block" : "hidden"} md:hidden border-t border-zinc-800 bg-zinc-950/95 px-4 py-4`}>
+            <div className="space-y-3">
+              <Link to="/" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Home</Link>
+              <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Blogs</Link>
             </div>
           </div>
           </nav>
