@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Blogs from "./Blogs";
-import GBES_blog from "./GBES_blog_old";
+import GBES_blog from "./GBES_blog";
 
 const experience = [
   {
