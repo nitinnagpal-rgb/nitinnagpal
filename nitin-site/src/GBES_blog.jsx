@@ -242,7 +242,7 @@ export default function GBES_blog({ theme = "dark", toggleTheme, navSolid }) {
   return (
     <main className="min-h-screen bg-zinc-900 text-white pt-28">
       {/* SEO meta tags injected via useEffect below. */}
-      <Navigation theme={theme} toggleTheme={toggleTheme} navSolid={navSolid} />
+      <Navigation theme={theme} toggleTheme={toggleTheme} navSolid={navSolid} simpleNav={true}/>
 
       {/* <nav
         className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
