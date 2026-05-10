@@ -340,23 +340,15 @@ export default function GBES_blog({ theme = "dark", toggleTheme, navSolid }) {
           </aside>
 
           <article className="min-w-0 space-y-8">
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3" >
               <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2 text-sm text-zinc-200 transition hover:border-cyan-400 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2 text-sm transition hover:border-cyan-400 hover:text-white"
               >
                 Share on LinkedIn
               </a>
-              <button
-                type="button"
-                onClick={() => setLiked((prev) => !prev)}
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2 text-sm text-zinc-200 transition hover:border-cyan-400 hover:text-white"
-              >
-                <span>{liked ? "Liked" : "Like"}</span>
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-zinc-800 text-xs text-zinc-200">{liked ? 1 : 0}</span>
-              </button>
             </div>
 
             <div className="rounded-3xl border border-zinc-800 bg-zinc-950/90 p-6 shadow-xl shadow-black/10 md:p-8">

@@ -25,7 +25,7 @@ export default function Navigation({ theme, toggleTheme, navSolid }) {
           <a href="/#about" className="hover:text-cyan-400 transition">About</a>
           <a href="/#experience" className="hover:text-cyan-400 transition">Experience</a>
           <a href="/#advisory" className="hover:text-cyan-400 transition">Advisory</a>
-          <Link to="/blogs" className="hover:text-cyan-400 transition">Blogs</Link>
+          <Link to="/blogs" className="hover:text-cyan-400 transition">Blogs and Thoughts</Link>
           <a href="/#travels" className="hover:text-cyan-400 transition">Travels</a>
           <a href="/#contact" className="hover:text-cyan-400 transition">Contact</a>
 
@@ -50,9 +50,16 @@ export default function Navigation({ theme, toggleTheme, navSolid }) {
           <button
             type="button"
             onClick={toggleTheme}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/60 text-zinc-200"
-          >
-            {theme === "dark" ? "☀️" : "🌙"}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/60 text-zinc-200">
+            {theme === "dark" ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-4 w-4 text-zinc-200" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 7a5 5 0 100 10 5 5 0 000-10z" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-4 w-4 text-zinc-900" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12.79A9 9 0 1111.21 3c.05 0 .1 0 .15 0a7 7 0 109.64 9.79z" />
+              </svg>
+            )}
           </button>
 
           <button
@@ -71,7 +78,7 @@ export default function Navigation({ theme, toggleTheme, navSolid }) {
           <a href="/#about" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-cyan-400 transition">About</a>
           <a href="/#experience" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-cyan-400 transition">Experience</a>
           <a href="/#advisory" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-cyan-400 transition">Advisory</a>
-          <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-cyan-400 transition">Blogs</Link>
+          <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-cyan-400 transition">Blogs and Thoughts</Link>
           <a href="/#travels" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-cyan-400 transition">Travels</a>
           <a href="/#contact" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-cyan-400 transition">Contact</a>
         </div>
