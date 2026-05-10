@@ -63,8 +63,8 @@ export default function GBES_blog({ theme, toggleTheme, navSolid }) {
       </div>
         <div className={`${mobileNavOpen ? "block" : "hidden"} md:hidden border-t border-zinc-800 bg-zinc-950/95 px-4 py-4`}>
           <div className="space-y-3">
-            <Link to="/" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Home</Link>
-            <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Blogs</Link>
+            <Link to="/" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Home</Link>
+            <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Blogs</Link>
           </div>
         </div>
       </nav>
@@ -92,17 +92,12 @@ export default function GBES_blog({ theme, toggleTheme, navSolid }) {
 
           <div className="space-y-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="space-y-2">
-                <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">GBES Blog</p>
-                <p className="text-sm text-zinc-400">Share or save this article</p>
-              </div>
               <div className="flex flex-wrap items-center gap-3">
                 <a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2 text-sm text-zinc-200 transition hover:border-cyan-400 hover:text-white"
-                >
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2 text-sm text-zinc-900 transition hover:border-cyan-400 hover:text-white">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
                     <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.82v2.16h.05c.53-1 1.82-2.16 3.74-2.16 4 0 4.74 2.63 4.74 6.05V24h-4V14.5c0-2.26-.04-5.18-3.16-5.18-3.16 0-3.64 2.47-3.64 5.02V24h-4V8z" />
                   </svg>
@@ -111,8 +106,7 @@ export default function GBES_blog({ theme, toggleTheme, navSolid }) {
                 <button
                   type="button"
                   onClick={() => setLiked((prev) => !prev)}
-                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2 text-sm text-zinc-200 transition hover:border-cyan-400 hover:text-white"
-                >
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/90 px-4 py-2 text-sm text-zinc-900 transition hover:border-cyan-400 hover:text-white">
                   <span>{liked ? "Liked" : "Like"}</span>
                   <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-zinc-800 text-xs text-zinc-200">{liked ? 1 : 0}</span>
                 </button>

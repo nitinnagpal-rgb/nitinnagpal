@@ -104,8 +104,8 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
           </div>
           <div className={`${mobileNavOpen ? "block" : "hidden"} md:hidden border-t border-zinc-800 bg-zinc-950/95 px-4 py-4`}>
             <div className="space-y-3">
-              <Link to="/" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Home</Link>
-              <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Blogs</Link>
+              <Link to="/" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Home</Link>
+              <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Blogs</Link>
               <button
                 type="button"
                 onClick={() => { toggleTheme(); setMobileNavOpen(false); }}
