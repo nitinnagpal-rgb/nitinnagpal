@@ -77,11 +77,11 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
                   )}
                 </button>
               </div>
-              <div className="hidden gap-8 text-md text-zinc-400 md:flex">
-              <Link to="/" className="hover:text-white transition">
+<div className={`hidden gap-8 text-md md:flex ${theme === "dark" ? "text-white" : "text-zinc-900"}`} >
+              <Link to="/" className="hover:text-cyan-400 transition">
                 Home
               </Link>
-              <Link to="/blogs" className="hover:text-white transition">
+              <Link to="/blogs" className="hover:text-cyan-400 transition">
                 Blogs
               </Link>
               <button

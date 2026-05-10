@@ -235,13 +235,13 @@ export default function App() {
       </h1>
     </div>
 
-    <div className="hidden gap-8 text-md text-zinc-400 md:flex">
-      <a href="#about" className="hover:text-white transition">About</a>
-      <a href="#experience" className="hover:text-white transition">Experience</a>
-      <a href="#advisory" className="hover:text-white transition">Advisory</a>
-      <Link to="/blogs" className="hover:text-white transition">Blogs and Thoughts</Link>
-      <a href="#travels" className="hover:text-white transition">Travels</a>
-      <a href="#contact" className="hover:text-white transition">Contact</a>
+    <div className={`hidden gap-8 text-md md:flex ${theme === "dark" ? "text-white" : "text-zinc-900"}`} >
+      <a href="#about" className="hover:text-cyan-400 transition">About</a>
+      <a href="#experience" className="hover:text-cyan-400 transition">Experience</a>
+      <a href="#advisory" className="hover:text-cyan-400 transition">Advisory</a>
+      <Link to="/blogs" className="hover:text-cyan-400 transition">Blogs and Thoughts</Link>
+      <a href="#travels" className="hover:text-cyan-400 transition">Travels</a>
+      <a href="#contact" className="hover:text-cyan-400 transition">Contact</a>
       <button type="button" onClick={toggleTheme} className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-zinc-400 bg-zinc-900/10 text-zinc-200">
         {theme === "dark" ? (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-4 w-4 text-zinc-200" aria-hidden="true">
