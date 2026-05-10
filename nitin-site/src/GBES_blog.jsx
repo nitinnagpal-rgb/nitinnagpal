@@ -189,7 +189,7 @@ function DataTable({ headers, rows }) {
 
 function BulletList({ items }) {
   return (
-    <ul className="list-disc space-y-2 pl-6 text-zinc-300">
+    <ul className="list-disc space-y-0.5 leading-6 pl-6 text-zinc-300">
       {items.map((item) => (
         <li key={item}>{item}</li>
       ))}
@@ -225,14 +225,14 @@ export default function GBES_blog({ theme = "dark", toggleTheme, navSolid }) {
     upsertMeta('meta[name="description"]', { name: "description", content: "A continuous strategy calibration mindset for GMs, product leaders, and CEOs to balance innovation, growth investment, GTM focus, and operational efficiency." });
     upsertLink('link[rel="canonical"]', { rel: "canonical", href: shareUrl });
     upsertMeta('meta[property="og:type"]', { property: "og:type", content: "article" });
-    upsertMeta('meta[property="og:title"]', { property: "og:title", content: "GBES: A Continuous Strategy Calibration Mindset for GMs" });
+    upsertMeta('meta[property="og:title"]', { property: "og:title", content: "A Continuous Strategy Calibration Mindset for GMs and Product Leaders"});
     upsertMeta('meta[property="og:description"]', { property: "og:description", content: "A practical operating lens for deciding what to grow, build, explore, and sustain across products, GTM motions, and business investments." });
     upsertMeta('meta[property="og:url"]', { property: "og:url", content: shareUrl });
     upsertMeta('meta[property="og:image"]', { property: "og:image", content: ogImage });
     upsertMeta('meta[property="og:image:secure_url"]', { property: "og:image:secure_url", content: ogImage });
     upsertMeta('meta[property="og:image:type"]', { property: "og:image:type", content: "image/png" });
     upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" });
-    upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: "GBES: A Continuous Strategy Calibration Mindset for GMs" });
+    upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: "A Continuous Strategy Calibration Mindset for GMs and Product Leaders"});
     upsertMeta('meta[name="twitter:description"]', { name: "twitter:description", content: "A practical operating lens for deciding what to grow, build, explore, and sustain across products, GTM motions, and business investments." });
     upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: ogImage });
   }, []);
@@ -478,9 +478,9 @@ export default function GBES_blog({ theme = "dark", toggleTheme, navSolid }) {
 
               <section id="final-thought" className="mt-12 scroll-mt-28 space-y-4">
                 <h2 className="text-2xl font-semibold text-cyan-400">Final Thought</h2>
-                <p className="text-lg leading-6 text-zinc-300">Great GMs, Product leaders, and CEOs are strategic allocators.</p>
-                <p className="text-lg leading-6 text-zinc-300">The hardest leadership decision is often not what to build. It is deciding:</p>
-                <BulletList items={["what deserves aggressive investment", "what deserves incubation", "what deserves experimentation", "and what should simply be optimized efficiently"]} />
+                <p className="text-lg leading-6 text-zinc-300">Great GMs, Product leaders, and CEOs are ultimately strategic capital allocators. The hardest leadership challenge is rarely deciding what to build next. It is continuously balancing:</p>
+                <BulletList items={["investment in future innovations","scaling proven growth engines","incubating emerging opportunities","and optimizing mature businesses efficiently"]} />
+                <p className="text-lg leading-6 text-zinc-300">The organizations that do this well create the ability to innovate without destabilizing the core business. That is ultimately the mindset behind GBES.</p>
               </section>
             </div>
           </article>

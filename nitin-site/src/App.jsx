@@ -286,14 +286,14 @@ export default function App() {
 
   <div className={`${mobileNavOpen ? "block" : "hidden"} md:hidden border-t border-zinc-800 bg-zinc-950/95 px-4 py-4`}>
     <div className="space-y-3" style={{ color: theme === "dark" ? "white" : "rgb(31, 41, 55)" }}>
-      <a href="#about" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">About</a>
-      <a href="#experience" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Experience</a>
-      <a href="#advisory" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Advisory</a>
-      <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Blogs and Thoughts</Link>
-      <a href="#travels" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Travels</a>
-      <a href="#contact" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Contact</a>
+      <a href="#about" onClick={() => setMobileNavOpen(false)} className="block hover:text-white transition">About</a>
+      <a href="#experience" onClick={() => setMobileNavOpen(false)} className="block hover:text-white transition">Experience</a>
+      <a href="#advisory" onClick={() => setMobileNavOpen(false)} className="block hover:text-white transition">Advisory</a>
+      <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block hover:text-white transition">Blogs and Thoughts</Link>
+      <a href="#travels" onClick={() => setMobileNavOpen(false)} className="block hover:text-white transition">Travels</a>
+      <a href="#contact" onClick={() => setMobileNavOpen(false)} className="block hover:text-white transition">Contact</a>
     </div>
-  </div>
+  </div>  
 </nav>
 
       {/* HERO */}
