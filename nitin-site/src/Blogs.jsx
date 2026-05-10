@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Navigation from "./Navigation";
+
 
 const thoughtLeadership = [
     {
@@ -47,9 +49,10 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
     : thoughtLeadership.slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-white">
+    <main className="min-h-screen bg-zinc-900 text-white pt-28">
     {/* NAV */}
-          <nav className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"}`}>
+    <Navigation theme={theme} toggleTheme={toggleTheme} navSolid={navSolid} />
+          {/* <nav className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"}`}>
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 md:px-8">
               <div className="flex items-center gap-4">
                 <div className="font-medium tracking-tight">
@@ -124,7 +127,7 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
               </button>
             </div>
           </div>
-          </nav>
+          </nav> */}
      
       <section
         id="thoughts"

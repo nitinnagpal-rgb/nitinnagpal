@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Blogs from "./Blogs";
 import GBES_blog from "./GBES_blog";
+import Navigation from "./Navigation";
+
 
 const experience = [
   {
@@ -220,12 +222,14 @@ export default function App() {
   };
 
   const homeContent = (
-    <main className="min-h-screen bg-zinc-900 text-white">
+    <main className="min-h-screen bg-zinc-900 text-white pt-28">
 
       {/* NAV */}
       
 {/* NAV */}
-<nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"}`}>
+<Navigation theme={theme} toggleTheme={toggleTheme} navSolid={navSolid} />
+
+{/* <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"}`}>
   <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 md:px-8">
     <div className="font-medium tracking-tight">
       <h1 className="text-4xl md:text-5xl font-semibold text-zinc-100">
@@ -294,7 +298,7 @@ export default function App() {
       <a href="#contact" onClick={() => setMobileNavOpen(false)} className="block hover:text-white transition">Contact</a>
     </div>
   </div>  
-</nav>
+</nav> */}
 
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-8 pt-28 pb-24 md:pt-32 grid md:grid-cols-2 gap-4 items-center">

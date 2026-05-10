@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 const shareUrl = "https://nitinnagpal.com/GBES_blog";
 const ogImage = "https://nitinnagpal.com/assets/GBES_Blog_2.png";
+import Navigation from "./Navigation";
+
 
 const gbesRows = [
   ["Grow", "Accelerate proven demand", "Scale aggressively", "Market leadership"],
@@ -238,10 +240,11 @@ export default function GBES_blog({ theme = "dark", toggleTheme, navSolid }) {
   }, []);
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-white">
+    <main className="min-h-screen bg-zinc-900 text-white pt-28">
       {/* SEO meta tags injected via useEffect below. */}
+      <Navigation theme={theme} toggleTheme={toggleTheme} navSolid={navSolid} />
 
-      <nav
+      {/* <nav
         className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
           navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"
         }`}
@@ -302,11 +305,10 @@ export default function GBES_blog({ theme = "dark", toggleTheme, navSolid }) {
             <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 transition hover:text-white">Blogs</Link>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       <section className="mx-auto max-w-7xl px-6 py-10 md:px-8">
         <div className="mb-10 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">GBES Blog</p>
           <h1 className="mx-auto mt-6 max-w-5xl text-3xl font-semibold tracking-tight text-cyan-400 md:text-5xl">
             A Continuous Strategy Calibration Mindset for GMs and Product Leaders
           </h1>
