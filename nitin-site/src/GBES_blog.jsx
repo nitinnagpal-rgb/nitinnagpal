@@ -297,7 +297,7 @@ export default function GBES_blog({ theme = "dark", toggleTheme, navSolid }) {
         </div>
 
         <div className={`${mobileNavOpen ? "block" : "hidden"} border-t border-zinc-800 bg-zinc-950/95 px-4 py-4 md:hidden`}>
-          <div className="space-y-3">
+          <div className="space-y-3" style={{ color: theme === "dark" ? "white" : "rgb(31, 41, 55)" }}>
             <Link to="/" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 transition hover:text-white">Home</Link>
             <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 transition hover:text-white">Blogs</Link>
           </div>

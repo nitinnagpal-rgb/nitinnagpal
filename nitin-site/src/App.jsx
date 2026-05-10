@@ -285,7 +285,7 @@ export default function App() {
   </div>
 
   <div className={`${mobileNavOpen ? "block" : "hidden"} md:hidden border-t border-zinc-800 bg-zinc-950/95 px-4 py-4`}>
-    <div className="space-y-3">
+    <div className="space-y-3" style={{ color: theme === "dark" ? "white" : "rgb(31, 41, 55)" }}>
       <a href="#about" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">About</a>
       <a href="#experience" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Experience</a>
       <a href="#advisory" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Advisory</a>

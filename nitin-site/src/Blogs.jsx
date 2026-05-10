@@ -77,13 +77,13 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
                   )}
                 </button>
               </div>
-<div className={`hidden gap-8 text-md md:flex ${theme === "dark" ? "text-white" : "text-zinc-900"}`} >
-              <Link to="/" className="hover:text-cyan-400 transition">
-                Home
-              </Link>
-              <Link to="/blogs" className="hover:text-cyan-400 transition">
-                Blogs
-              </Link>
+              <div className={`hidden gap-8 text-md md:flex ${theme === "dark" ? "text-white" : "text-zinc-900"}`} >
+                <Link to="/" className="hover:text-cyan-400 transition">
+                  Home
+                </Link>
+                <Link to="/blogs" className="hover:text-cyan-400 transition">
+                  Blogs
+                </Link>
               <button
             type="button"
             onClick={toggleTheme}
@@ -103,7 +103,7 @@ export default function Blogs({ theme, toggleTheme, navSolid }) {
             </div>
           </div>
           <div className={`${mobileNavOpen ? "block" : "hidden"} md:hidden border-t border-zinc-800 bg-zinc-950/95 px-4 py-4`}>
-            <div className="space-y-3">
+            <div className="space-y-3" style={{ color: theme === "dark" ? "white" : "rgb(31, 41, 55)" }}>
               <Link to="/" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Home</Link>
               <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-900 hover:text-white transition">Blogs</Link>
               <button
