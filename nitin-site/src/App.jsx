@@ -297,6 +297,8 @@ export default function App() {
             <Link to="/blogs" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Blogs and Thoughts</Link>
             <a href="#travels" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Travels</a>
             <a href="#contact" onClick={() => setMobileNavOpen(false)} className="block text-zinc-200 hover:text-white transition">Contact</a>
+            </div>
+            <div className="flex items-center gap-3 md:hidden">
             <button
               type="button"
               onClick={() => { toggleTheme(); setMobileNavOpen(false); }}
