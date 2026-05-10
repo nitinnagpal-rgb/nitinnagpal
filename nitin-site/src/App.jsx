@@ -228,7 +228,7 @@ export default function App() {
 <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${navSolid ? "bg-zinc-950/90 border-b border-zinc-800 shadow-xl shadow-black/20" : "bg-zinc-950/10"}`}>
   <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 md:px-8">
     <div className="font-medium tracking-tight">
-      <h1 className="text-2xl md:text-5xl font-semibold text-zinc-100">
+      <h1 className="text-4xl md:text-5xl font-semibold text-zinc-100">
         <span className="text-cyan-400" style={{ textShadow: "0 0 4px rgba(34,211,238,0.8), 0 0 18px rgba(34,211,238,0.5)" }}>
           Nitin Nagpal
         </span>
