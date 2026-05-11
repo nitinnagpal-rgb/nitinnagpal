@@ -66,11 +66,11 @@ export default function Navigation({ theme, toggleTheme, navSolid }) {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 md:px-8">
         <Link to="/" className="font-medium tracking-tight" onClick={() => setMobileNavOpen(false)}>
-          <h1 className="text-3xl md:text-5xl font-semibold text-zinc-100">
+          <h1 className="text-4xl md:text-4xl font-semibold text-zinc-100">
             <span
               className="text-cyan-400"
               style={{
-                textShadow: "0 0 4px rgba(34,211,238,0.8), 0 0 18px rgba(34,211,238,0.5)",
+                textShadow: "0 0 1px rgba(36, 42, 42, 0.8), 0 0 18px rgba(34,211,238,0.5)",
               }}
             >
               Nitin Nagpal

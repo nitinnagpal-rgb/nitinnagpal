@@ -301,12 +301,12 @@ export default function App() {
 </nav> */}
 
       {/* HERO */}
-      <section className="mx-auto max-w-7xl px-8 pt-20 pb-24 md:pt-32 grid md:grid-cols-2 gap-4 items-center">
+      <section className="mx-auto max-w-6xl px-8 pt-20 pb-24 md:pt-32 grid md:grid-cols-2 gap-4 items-center">
         <div className="flex justify-center md:justify-start">
           <img
             src="/assets/nitin.jpg"
             alt="Nitin Nagpal"
-            className="w-full max-w-[420px] h-auto rounded-3xl object-cover shadow-2xl"
+            className="w-full max-w-[360px] h-auto rounded-3xl object-cover shadow-2xl"
           />
         </div>
 
