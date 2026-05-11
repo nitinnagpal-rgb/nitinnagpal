@@ -468,8 +468,11 @@ export default function App() {
       ${theme === "dark" ? "bg-zinc-950/50 text-zinc-300" : "bg-zinc-200 text-zinc-900"}
     `}
   >
-    <div className="absolute left-6 top-8 bottom-8 w-px bg-zinc-800 md:left-1/2 md:-translate-x-1/2" />
-
+<div
+  className={`absolute left-6 top-8 bottom-8 w-px md:left-1/2 md:-translate-x-1/2
+    ${theme === "dark" ? "bg-zinc-800" : "bg-zinc-300"}
+  `}
+/>
     <div className="space-y-8 md:space-y-16">
       {displayedExperience.map((item, index) => {
         const isLeft = index % 2 === 0;
