@@ -451,85 +451,93 @@ export default function App() {
 
       {/* EXPERIENCE */}
      <section
-        id="experience"
-        className="mx-auto max-w-7xl border-t border-cyan-900 px-8 py-10 pt-20"
-      >
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <h2 className="mt-6 text-2xl md:text-4xl font-semibold tracking-tight text-white">
-            Professional Experience
-          </h2>
-          <p className="mt-4 text-base md:text-lg leading-8 text-zinc-400">
-            A timeline of my professional journey and key achievements.
-          </p>
-        </div>
+  id="experience"
+  className="mx-auto max-w-7xl border-t border-cyan-900 px-4 py-10 pt-20 md:px-8"
+>
+  <div className="mx-auto mb-10 max-w-3xl text-center md:mb-16">
+    <h2 className="mt-6 text-2xl font-semibold tracking-tight text-white md:text-4xl">
+      Professional Experience
+    </h2>
+    <p className="mt-4 text-base leading-7 text-zinc-400 md:text-lg md:leading-8">
+      A timeline of my professional journey and key achievements.
+    </p>
+  </div>
 
-        {/*<div className="relative mx-auto max-w-6xl rounded-3xl border border-zinc-900 bg-zinc-950/80 px-6 py-12 shadow-2xl shadow-cyan-500/5">*/}
-        <div 
-          className={`relative mx-auto max-w-6xl rounded-3xl border border-zinc-800 px-6 py-12
-                      ${theme === "dark" ? "bg-zinc-950/50 text-zinc-300" : "bg-zinc-200 text-zinc-900"}
-                    `}
+  <div
+    className={`relative mx-auto max-w-6xl rounded-3xl border border-zinc-800 px-4 py-8 md:px-6 md:py-12
+      ${theme === "dark" ? "bg-zinc-950/50 text-zinc-300" : "bg-zinc-200 text-zinc-900"}
+    `}
+  >
+    <div className="absolute left-6 top-8 bottom-8 w-px bg-zinc-800 md:left-1/2 md:-translate-x-1/2" />
+
+    <div className="space-y-8 md:space-y-16">
+      {displayedExperience.map((item, index) => {
+        const isLeft = index % 2 === 0;
+        const year = item.period.split(" - ")[0];
+
+        return (
+          <div
+            key={`${item.company}-${item.period}`}
+            className={`relative flex pl-10 md:pl-0 ${isLeft ? "md:justify-start" : "md:justify-end"}`}
           >
-          <div className="absolute left-1/2 top-8 bottom-35  w-px bg-zinc-800"></div>
-          <div className="space-y-16">
-            {displayedExperience.map((item, index) => {
-              const isLeft = index % 2 === 0;
-              const year = item.period.split(' - ')[0];
-              return (
-                <div
-                  key={`${item.company}-${item.period}`}
-                  className={`relative flex ${isLeft ? 'justify-start' : 'justify-end'}`}
-                >
-                  <div className="absolute left-1/2 top-2 flex transform -translate-x-1/2 flex-col items-center">
-                    <div className="w-4 h-4 bg-cyan-400 rounded-full shadow-[0_0_0_6px_rgba(34,211,238,0.1)]"></div>
-                    <span className="mt-2 text-xs uppercase tracking-[0.3em] text-cyan-300">
-                      {year}
-                    </span>
-                  </div>
-                  <div className={`w-full md:w-1/2 ${isLeft ? 'pr-8 text-right md:text-left' : 'pl-8 text-left md:text-right'}`}>
-                    <div className="inline-block max-w-full rounded-3xl border border-zinc-800 bg-zinc-900/95 p-6 text-left shadow-xl shadow-black/20 md:text-left">
-                      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-4">
-                        <div className="flex items-center gap-4">
-                          <img
-                            src={item.logo}
-                            alt={item.company}
-                            className="w-12 h-12 rounded-2xl border border-zinc-800 bg-white p-1 object-contain"
-                          />
-                          <div>
-                            <h3 className="text-lg font-semibold text-white">
-                              {item.role}
-                            </h3>
-                            <p className="text-sm text-zinc-400">{item.company}</p>
-                          </div>
-                        </div>
-                        <p className="text-sm text-zinc-500">{item.period}</p>
-                      </div>
-                      <p className="text-sm leading-6 text-zinc-300">{item.text}</p>
-                    </div>
+            <div className="absolute left-1 top-1 flex flex-col items-center md:left-1/2 md:-translate-x-1/2">
+              <div className="h-4 w-4 rounded-full bg-cyan-400 shadow-[0_0_0_6px_rgba(34,211,238,0.1)]" />
+              <span className="mt-2 text-[10px] uppercase tracking-[0.25em] text-cyan-300 md:text-xs">
+                {year}
+              </span>
+            </div>
+
+            <div className={`w-full md:w-1/2 ${isLeft ? "md:pr-8" : "md:pl-8"}`}>
+              <div
+                className={`rounded-3xl border border-zinc-800 p-5 text-left shadow-xl shadow-black/20 md:p-6
+                  ${theme === "dark" ? "bg-zinc-900/95" : "bg-white/90"}
+                `}
+              >
+                <div className="mb-4 flex items-start gap-4">
+                  <img
+                    src={item.logo}
+                    alt={item.company}
+                    className="h-11 w-11 flex-shrink-0 rounded-2xl border border-zinc-800 bg-white p-1 object-contain md:h-12 md:w-12"
+                  />
+
+                  <div className="min-w-0 flex-1">
+                    <h3 className={`text-base font-semibold leading-6 md:text-lg ${theme === "dark" ? "text-white" : "text-zinc-900"}`}>
+                      {item.role}
+                    </h3>
+                    <p className="mt-1 text-sm text-zinc-400">{item.company}</p>
+                    <p className="mt-1 text-xs text-zinc-500 md:text-sm">{item.period}</p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
 
-          <div className="mt-10 flex flex-col items-center gap-4 text-center">
-            {experience.length > 3 && (
-              <button
-                type="button"
-                onClick={() => setShowAllExperience((prev) => !prev)}
-                className="rounded-full border border-cyan-400 bg-cyan-500/10 px-6 py-3 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-500/20"
-              >
-                {showAllExperience ? 'Show less' : `View All Experiences`}
-              </button>
-            )}
-            {!showAllExperience && (
-              <p className="text-sm text-zinc-500">
-                Showing recent 4 roles. Expand to reveal the full timeline.
-              </p>
-            )}
+                <p className={`text-sm leading-6 ${theme === "dark" ? "text-zinc-300" : "text-zinc-700"}`}>
+                  {item.text}
+                </p>
+              </div>
+            </div>
           </div>
+        );
+      })}
+    </div>
 
-        </div>
-      </section>
+    <div className="mt-10 flex flex-col items-center gap-4 text-center">
+      {experience.length > 3 && (
+        <button
+          type="button"
+          onClick={() => setShowAllExperience((prev) => !prev)}
+          className="rounded-full border border-cyan-400 bg-cyan-500/10 px-6 py-3 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-500/20"
+        >
+          {showAllExperience ? "Show less" : "View All Experiences"}
+        </button>
+      )}
+
+      {!showAllExperience && (
+        <p className="text-sm text-zinc-500">
+          Showing recent 4 roles. Expand to reveal the full timeline.
+        </p>
+      )}
+    </div>
+  </div>
+</section>
 
       {/* ADVISORY */}
       <section
