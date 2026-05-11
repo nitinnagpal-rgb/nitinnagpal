@@ -463,7 +463,12 @@ export default function App() {
           </p>
         </div>
 
-        <div className="relative mx-auto max-w-6xl rounded-3xl border border-zinc-900 bg-zinc-950/80 px-6 py-12 shadow-2xl shadow-cyan-500/5">
+        {/*<div className="relative mx-auto max-w-6xl rounded-3xl border border-zinc-900 bg-zinc-950/80 px-6 py-12 shadow-2xl shadow-cyan-500/5">*/}
+        <div 
+          className={`relative mx-auto max-w-6xl rounded-3xl border border-zinc-800 px-6 py-12
+                      ${theme === "dark" ? "bg-zinc-950/50 text-zinc-300" : "bg-zinc-200 text-zinc-900"}
+                    `}
+          >
           <div className="absolute left-1/2 top-8 bottom-35  w-px bg-zinc-800"></div>
           <div className="space-y-16">
             {displayedExperience.map((item, index) => {
@@ -557,7 +562,9 @@ export default function App() {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-zinc-800 bg-zinc-950/50 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-zinc-300"
+                    className={`rounded-full border border-zinc-800 px-3 py-1 text-[11px] uppercase tracking-[0.25em]
+                      ${theme === "dark" ? "bg-zinc-950/50 text-zinc-300" : "bg-zinc-200 text-zinc-900"}
+                    `}
                   >
                     {tag}
                   </span>
@@ -739,7 +746,11 @@ export default function App() {
 
         <div className="grid gap-10 md:grid-cols-2">
           {/* SEND MESSAGE FORM */}
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-950/80 p-8 md:p-10">
+          <div 
+          className={`rounded-3xl border border-zinc-800 px-3 py-1 text-[11px] uppercase tracking-[0.25em] p-8 md:p-10 flex flex-col justify-top
+                      ${theme === "dark" ? "bg-zinc-950/50 text-zinc-300" : "bg-zinc-200 text-zinc-900"}
+                    `}
+          >
             <h3 className="text-2xl font-semibold text-white mb-8">Send a Message</h3>
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
@@ -810,10 +821,14 @@ export default function App() {
           </div>
 
           {/* CONTACT INFORMATION */}
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-950/80 p-8 md:p-10 flex flex-col justify-center">
+          <div 
+          className={`rounded-3xl border border-zinc-800 px-3 py-1 text-[11px] uppercase tracking-[0.25em] p-8 md:p-10 flex flex-col justify-top
+                      ${theme === "dark" ? "bg-zinc-950/50 text-zinc-300" : "bg-zinc-200 text-zinc-900"}
+                    `}
+          >
             <h3 className="text-2xl font-semibold text-white mb-8">Contact Information</h3>
             
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
                 <p className="text-sm font-medium text-zinc-400 mb-2">Email</p>
                 <a
@@ -853,7 +868,7 @@ export default function App() {
                     </svg>
                   </a>
                   <a
-                    href="https://nitinnagpal.com"
+                    href="https://www.nitinnagpal.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-900/50 text-zinc-300 transition hover:border-cyan-400 hover:text-cyan-400"
