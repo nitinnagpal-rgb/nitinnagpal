@@ -724,7 +724,7 @@ export default function App() {
             }}
           >
             <iframe
-              src="https://nitinnagpal-rgb.github.io/travel-globe/#/"
+              src="https://www.mytravelmap.app/u/nitin-nagpal?embed=main"
               style={{
                 position: 'absolute',
                 top: 0,
