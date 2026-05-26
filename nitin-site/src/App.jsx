@@ -735,7 +735,7 @@ export default function App() {
           referrerpolicy="no-referrer-when-downgrade"
           style="border:0;border-radius:14px;background:#06070d;max-width:100%"
           title="Travel globe"
-        ></iframe>
+        />
           <iframe
               src="https://www.mytravelmap.app/u/nitin-nagpal?embed=main"
               style={{
