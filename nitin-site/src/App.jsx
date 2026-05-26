@@ -723,7 +723,20 @@ export default function App() {
               borderRadius: '12px'
             }}
           >
-            <iframe
+
+            <!-- Travel Globe embed. Includes a small sponsored ad slot at the
+     bottom of the iframe. Resize the height attribute below to fit
+     your layout — 720 leaves room for the globe, stats, and ad. -->
+        <iframe
+          src="https://www.mytravelmap.app/u/nitin-nagpal?embed=main"
+          width="100%"
+          height="720"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          style="border:0;border-radius:14px;background:#06070d;max-width:100%"
+          title="Travel globe"
+        ></iframe>
+          <iframe
               src="https://www.mytravelmap.app/u/nitin-nagpal?embed=main"
               style={{
                 position: 'absolute',
