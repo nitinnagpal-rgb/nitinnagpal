@@ -734,7 +734,7 @@ export default function App() {
                 border: 'none'
               }}
               loading="lazy"
-              title="Nitin's Travel Globe"
+              title="Nitin's Travel Journal"
               allow="fullscreen"
             />
           </div>
