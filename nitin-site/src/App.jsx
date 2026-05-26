@@ -736,20 +736,6 @@ export default function App() {
           style="border:0;border-radius:14px;background:#06070d;max-width:100%"
           title="Travel globe"
         />
-          <iframe
-              src="https://www.mytravelmap.app/u/nitin-nagpal?embed=main"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none'
-              }}
-              loading="lazy"
-              title="Nitin's Travel Journal"
-              allow="fullscreen"
-            />
           </div>
         </div>
       </section>
