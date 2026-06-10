@@ -12,7 +12,7 @@ const experience = [
     role: "Vice President and General Manager - AI Business",
     period: "2026 - Present",
     text: "Leading Cohesity's AI strategy, product innovation, and go-to-market execution to accelerate customer adoption and business growth. ",
-    logo: "/assets/RelyanceAI.png",
+    logo: "/assets/Cohesity.png",
   },
   {
     company: "Relyance AI",
