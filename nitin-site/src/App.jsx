@@ -8,9 +8,16 @@ import Navigation from "./Navigation";
 
 const experience = [
   {
+    company: "Cohesity",
+    role: "Vice President and General Manager - AI Business",
+    period: "2026 - Present",
+    text: "Leading Cohesity's AI strategy, product innovation, and go-to-market execution to accelerate customer adoption and business growth. ",
+    logo: "/assets/RelyanceAI.png",
+  },
+  {
     company: "Relyance AI",
     role: "Chief Product Officer",
-    period: "2025 - Present",
+    period: "2025 - 2026",
     text: "Built AI-native data security, privacy, and governance platform strategy across product, GTM, pricing, and analyst positioning.",
     logo: "/assets/RelyanceAI.png",
   },
